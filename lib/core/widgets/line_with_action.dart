@@ -24,7 +24,7 @@ class LineWithAction extends StatelessWidget {
           child: Text(
             actionName,
             style: TextStyle(
-                color: MyColors().primaryColor,
+                color: MyColors().secondaryColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/helper/colors_class.dart';
+import 'package:weather_app/core/helper/constant.dart';
 
 class CustomBackground extends StatelessWidget {
   Widget? child;
@@ -10,23 +11,11 @@ class CustomBackground extends StatelessWidget {
     return Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              MyColors().secondaryColor,
-              MyColors().c22, // Add another color for the gradient
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(bg),
+            fit: BoxFit.cover,
           ),
-          // Rounded corners
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.9),
-              blurRadius: 10,
-              offset:const  Offset(0, 5), // Shadow position
-            ),
-          ],
         ),
         child: child);
   }
