@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
 import 'package:weather_app/core/helper/constant.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
+import 'package:weather_app/features/Auth/presentation/screens/register_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -19,13 +18,13 @@ class OnboardingScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: const Padding(
+      child: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 680),
-            Text(
+            const SizedBox(height: 680),
+            const Text(
               'Get real-time weather updates and forecasts\n for your location.',
               style: TextStyle(
                 color: Colors.white,
@@ -33,10 +32,19 @@ class OnboardingScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            customEvaluatedButton(),
+            CustomEvaluatedButton(
+                title: "Get Started",
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => RegisterScreen(),
+                      ),
+                      (route) => false);
+                }),
           ],
         ),
       ),

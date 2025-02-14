@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/helper/colors_class.dart';
 
-class customEvaluatedButton extends StatelessWidget {
-  const customEvaluatedButton({
-    super.key,
-  });
+class CustomEvaluatedButton extends StatelessWidget {
+  void Function()? onTap;
+  String title;
+  CustomEvaluatedButton({super.key, required this.onTap, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // Navigate to the next screen
-      },
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
               MyColors().secondaryColor,
-              MyColors()
-                  .primaryColor, // Add another color for the gradient
+              MyColors().primaryColor, // Add another color for the gradient
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -29,15 +26,17 @@ class customEvaluatedButton extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
               blurRadius: 10,
-              offset: Offset(0, 5), // Shadow position
+              offset: const Offset(0, 5), // Shadow position
             ),
           ],
         ),
-        child: Text(
-          'Get Started',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
           ),
         ),
       ),
