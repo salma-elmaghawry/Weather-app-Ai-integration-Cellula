@@ -38,12 +38,8 @@ class OnboardingScreen extends StatelessWidget {
             CustomEvaluatedButton(
                 title: "Get Started",
                 onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => RegisterScreen(),
-                      ),
-                      (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, registerscreen, (route) => false);
                 }),
           ],
         ),
