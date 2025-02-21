@@ -86,13 +86,8 @@ class _LoginScreenState extends State<LoginScreen> {
               CustomEvaluatedButton(
                 title: "Login",
                 onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const HomeScreen()), // Create a Route
-                    (route) => false,
-                  );
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, homeScreen, (route) => false);
                 },
               ),
               const SizedBox(
@@ -102,12 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: "Don't Have Account ?",
                 actionName: " Register",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            RegisterScreen()), // Create a Route
-                  );
+                  Navigator.pushNamed(context, registerscreen);
                 },
               ),
             ],

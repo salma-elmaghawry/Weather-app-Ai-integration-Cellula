@@ -96,13 +96,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             CustomEvaluatedButton(
               title: "Register",
               onTap: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          const HomeScreen()), // Create a Route
-                  (route) => false,
-                );
+                Navigator.pushNamedAndRemoveUntil(
+                    context, homeScreen, (route) => false);
               },
             ),
             const SizedBox(
@@ -112,11 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               title: "Already Have an account ?",
               actionName: " Login",
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => LoginScreen()), // Create a Route
-                );
+                Navigator.pushNamed(context, loginScreen);
               },
             ),
           ]),
