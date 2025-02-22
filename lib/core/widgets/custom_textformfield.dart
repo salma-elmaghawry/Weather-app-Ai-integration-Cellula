@@ -26,6 +26,7 @@ class CustomTextformfield extends StatelessWidget {
       cursorColor: MyColors().primaryColor,
       //decoration
       decoration: InputDecoration(
+        
           filled: true,
           fillColor: MyColors().c2,
           labelText: label,
