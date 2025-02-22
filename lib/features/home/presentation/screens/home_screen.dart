@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/core/helper/colors_class.dart';
 import 'package:weather_app/core/helper/constant.dart';
 import 'package:weather_app/core/widgets/custom_background.dart';
-import 'package:weather_app/features/home/presentation/widgets/build_hourly_forecast.dart';
+import 'package:weather_app/features/home/presentation/widgets/build_weeky_forecast.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 400),
-                buildHourlyForecast(),
+                buildWeeklyForecast(),
               ],
             ),
           ),

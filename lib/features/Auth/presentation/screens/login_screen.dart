@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:weather_app/core/helper/constant.dart';
+import 'package:weather_app/core/routing/routes.dart';
 import 'package:weather_app/core/widgets/custom_background.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
 import 'package:weather_app/core/widgets/custom_textformfield.dart';
@@ -87,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: "Login",
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
-                      context, homeScreen, (route) => false);
+                      context, Routes.homeScreen, (route) => false);
                 },
               ),
               const SizedBox(
@@ -97,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: "Don't Have Account ?",
                 actionName: " Register",
                 onTap: () {
-                  Navigator.pushNamed(context, registerscreen);
+                  Navigator.pushNamed(context, Routes.registerScreen);
                 },
               ),
             ],

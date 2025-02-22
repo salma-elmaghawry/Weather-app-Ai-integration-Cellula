@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/helper/colors_class.dart';
 
-Widget buildHourlyForecast() {
+Widget buildWeeklyForecast() {
   return SizedBox(
     height: 150,
     child: ListView.builder(
@@ -25,7 +25,7 @@ Widget buildHourlyForecast() {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '12 AM',
+                'Mon',
                 style: TextStyle(color: Colors.white70, fontSize: 12),
               ),
               SizedBox(
