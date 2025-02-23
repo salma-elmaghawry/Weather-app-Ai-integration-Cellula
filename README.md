@@ -32,7 +32,7 @@ lib/
 
 ## Screenshots 📸
 Here’s a preview of WeatherWise:
-![Skyzen App Screenshot](https://github.com/user-attachments/assets/e143978d-50eb-4800-909e-db9e3f54f37f)
+![WeatherWise App Screenshot](https://github.com/user-attachments/assets/b9e62520-27e5-4ef6-9ac6-a1af98eb43e0)
 
 
 ## Contributing 🤝
