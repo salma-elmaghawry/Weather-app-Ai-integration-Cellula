@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/core/routing/app_router.dart';
 import 'package:weather_app/core/routing/routes.dart';
-import 'package:weather_app/core/theming/app_colors.dart';
 
 class WeatherApp extends StatelessWidget {
   final AppRouter appRouter;

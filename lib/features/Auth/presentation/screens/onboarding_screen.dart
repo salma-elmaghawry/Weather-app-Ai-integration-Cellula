@@ -3,7 +3,6 @@ import 'package:weather_app/core/helper/constant.dart';
 import 'package:weather_app/core/helper/extenstions.dart';
 import 'package:weather_app/core/routing/routes.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
-import 'package:weather_app/features/Auth/presentation/screens/login_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

@@ -4,7 +4,6 @@ import 'package:weather_app/features/Auth/presentation/screens/login_screen.dart
 import 'package:weather_app/features/Auth/presentation/screens/onboarding_screen.dart';
 import 'package:weather_app/features/Auth/presentation/screens/register_screen.dart';
 import 'package:weather_app/features/home/presentation/screens/home_screen.dart';
-import 'package:weather_app/features/home/presentation/screens/search_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -20,8 +19,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case Routes.registerScreen:
         return MaterialPageRoute(builder: (_) => RegisterScreen());
-      case Routes.searchScreen:
-        return MaterialPageRoute(builder: (_) => SearchScreen());
+
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
