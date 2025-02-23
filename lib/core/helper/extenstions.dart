@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+  ///use this extension to navigate between screens
 extension Navigation on BuildContext {
+  //context.pushNamed('routeName');
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }

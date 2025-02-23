@@ -28,22 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^9.0.0
   cupertino_icons: ^1.0.8
   firebase_core: ^3.12.0
   flutter:
     sdk: flutter
-  #to add svg assets
+  flutter_bloc: ^9.0.0
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
+  intl: ^0.20.2
   win32: ^5.1.0
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter

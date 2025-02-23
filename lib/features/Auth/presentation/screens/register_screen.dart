@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather_app/core/helper/constant.dart';
+import 'package:weather_app/core/helper/extenstions.dart';
 import 'package:weather_app/core/routing/routes.dart';
 import 'package:weather_app/core/widgets/custom_background.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
@@ -97,8 +98,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             CustomEvaluatedButton(
               title: "Register",
               onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.homeScreen, (route) => false);
+                context.pushNamedAndRemoveUntil(Routes.searchScreen,
+                    routePredicate: (route) => false);
               },
             ),
             const SizedBox(
@@ -108,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               title: "Already Have an account ?",
               actionName: " Login",
               onTap: () {
-                Navigator.pushNamed(context, Routes.loginScreen);
+                context.pushNamed(Routes.loginScreen);
               },
             ),
           ]),

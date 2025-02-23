@@ -4,6 +4,7 @@ import 'package:weather_app/features/Auth/presentation/screens/login_screen.dart
 import 'package:weather_app/features/Auth/presentation/screens/onboarding_screen.dart';
 import 'package:weather_app/features/Auth/presentation/screens/register_screen.dart';
 import 'package:weather_app/features/home/presentation/screens/home_screen.dart';
+import 'package:weather_app/features/home/presentation/screens/search_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -11,11 +12,16 @@ class AppRouter {
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        final args = settings.arguments as Map<String, dynamic>;
+        final cityName = args['searchValue'] ?? 'Cairo';
+        return MaterialPageRoute(
+            builder: (_) => HomeScreen(cityName: cityName));
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case Routes.registerScreen:
         return MaterialPageRoute(builder: (_) => RegisterScreen());
+      case Routes.searchScreen:
+        return MaterialPageRoute(builder: (_) => SearchScreen());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
