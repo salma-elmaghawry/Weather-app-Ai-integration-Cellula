@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
+import 'package:weather_app/core/theming/app_colors.dart';
 
 class CustomTextformfield extends StatelessWidget {
   final TextEditingController controller;
@@ -23,12 +23,12 @@ class CustomTextformfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      cursorColor: MyColors().primaryColor,
+      cursorColor: MyColors.primaryColor,
       //decoration
       decoration: InputDecoration(
         
           filled: true,
-          fillColor: MyColors().c2,
+          fillColor: MyColors.c2,
           labelText: label,
           labelStyle: const TextStyle(color: Colors.white),
           suffixIcon: suffixIcon,
@@ -39,7 +39,7 @@ class CustomTextformfield extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide(
-              color: MyColors().primaryColor,
+              color: MyColors.primaryColor,
               width: 2.0,
             ),
           )),

@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   #to add svg assets
+  flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
   win32: ^5.1.0
 

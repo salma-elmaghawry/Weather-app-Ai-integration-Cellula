@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
+import 'package:weather_app/core/theming/app_colors.dart';
 
 Widget buildWeeklyForecast() {
   return SizedBox(
@@ -15,7 +15,7 @@ Widget buildWeeklyForecast() {
           decoration: BoxDecoration(
             //color: MyColors().componentsColor,
             gradient: LinearGradient(
-              colors: [MyColors().primaryColor, MyColors().componentsColor],
+              colors: [MyColors.primaryColor, MyColors.componentsColor],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

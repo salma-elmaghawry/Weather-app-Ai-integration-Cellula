@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
+import 'package:weather_app/core/theming/app_colors.dart';
 
 class CustomEvaluatedButton extends StatelessWidget {
   void Function()? onTap;
@@ -15,8 +15,8 @@ class CustomEvaluatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              MyColors().secondaryColor,
-              MyColors().primaryColor, // Add another color for the gradient
+              MyColors.secondaryColor,
+              MyColors.primaryColor, // Add another color for the gradient
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
