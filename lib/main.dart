@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
         onboardingScreen: (context) => const OnboardingScreen(),
         loginScreen: (context) => LoginScreen(),
         registerscreen: (context) => RegisterScreen(),
-        homeScreen:(context)=>HomeScreen(),
+        homeScreen: (context) =>const  HomeScreen(),
       },
-      initialRoute: 'onboarding_screen',
+      initialRoute: onboardingScreen,
     );
   }
 }

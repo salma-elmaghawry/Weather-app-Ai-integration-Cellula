@@ -18,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
 
-  final TextEditingController name = TextEditingController();
+  final TextEditingController email = TextEditingController();
 
   final TextEditingController password = TextEditingController();
 
@@ -54,8 +54,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20,
               ),
               CustomTextformfield(
-                controller: name,
-                label: "Name",
+                controller: email,
+                label: "Email",
                 suffixIcon: const Icon(
                   Icons.person,
                   color: Colors.white,
