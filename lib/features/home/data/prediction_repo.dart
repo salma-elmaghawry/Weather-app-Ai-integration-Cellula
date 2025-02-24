@@ -5,7 +5,7 @@ class PredictionService {
   PredictionService();
 
   Future<int> getPrediction(List<int> features) async {
-    final url = Uri.parse('http://127.0.0.1:5001/predict');
+    final url = Uri.parse('http://192.168.1.69:5001/predict');
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},

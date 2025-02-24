@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/helper/constant.dart';
+import 'package:weather_app/features/home/data/prediction_repo.dart';
 import 'package:weather_app/features/home/data/weather_model.dart';
 import 'package:weather_app/features/home/data/weather_repo.dart';
-import 'package:weather_app/features/home/presentation/cubits/cubit/weather_cubit.dart';
+import 'package:weather_app/features/home/presentation/cubits/weather/weather_cubit.dart';
 import 'package:weather_app/features/home/presentation/widgets/build_weeky_forecast.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,8 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          WeatherCubit(WeatherRepository())..getWeather(widget.cityName),
+      create: (context) => WeatherCubit(
+        WeatherRepository(),
+        PredictionService(),
+      )..getWeather(widget.cityName),
       child: Scaffold(
         //backgroundColor: Colors.deepPurple,
         body: Container(
@@ -37,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (state is WeatherLoading) {
                   return const Center(child: CircularProgressIndicator());
                 } else if (state is WeatherLoaded) {
-                  return _buildWeatherLoaded(state.weather);
+                  return _buildWeatherLoaded(
+                      context, state.weather, state.prediction);
                 } else if (state is WeatherError) {
                   return Center(
                     child: Text(
@@ -47,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 } else {
                   return const Center(
-                      child: Text('Enter a city name to get weather data'));
+                      child: Text('Please access your location first '));
                 }
               },
             ),
@@ -57,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildWeatherLoaded(WeatherModel weather) {
+  Widget _buildWeatherLoaded(
+      BuildContext context, WeatherModel weather, int prediction) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -87,8 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 19,
             ),
           ),
-          const Text(
-            'Prediction is .....',
+          Text(
+            prediction == 1 ? 'You can go out' : 'Stay at home',
             style: TextStyle(
               color: Colors.white,
               fontSize: 19,
