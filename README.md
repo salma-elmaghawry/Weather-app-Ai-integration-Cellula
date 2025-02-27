@@ -29,9 +29,10 @@ lib/
 └── main.dart           # App entry point
 ```
 
+
 ## Screenshots 📸
 Here’s a preview of WeatherWise:
-![WeatherWise App Screenshot](https://github.com/user-attachments/assets/b9e62520-27e5-4ef6-9ac6-a1af98eb43e0)
+![WeatherWise App Screenshot](https://github.com/user-attachments/assets/1f9a7b7c-5aaf-4552-9ea7-be6267db873c)
 
 
 ## Contributing 🤝
