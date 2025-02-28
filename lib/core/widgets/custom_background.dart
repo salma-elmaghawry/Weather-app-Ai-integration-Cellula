@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
 import 'package:weather_app/core/helper/constant.dart';
 
 class CustomBackground extends StatelessWidget {

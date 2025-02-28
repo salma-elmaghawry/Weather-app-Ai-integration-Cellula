@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/core/helper/colors_class.dart';
 
 class LineWithAction extends StatelessWidget {
   String title;
@@ -18,7 +17,9 @@ class LineWithAction extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(title),
+        Text(title,
+            style: TextStyle(
+                color: Colors.white, fontSize: 15)),
         GestureDetector(
           onTap: onTap,
           child: Text(
