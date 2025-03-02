@@ -2,6 +2,6 @@
 
 
 
-## 📌 System Design
+## 📚 System Design
 
 ![s](https://github.com/user-attachments/assets/793306c9-1886-4513-846d-1792cef435b3)
