@@ -32,7 +32,7 @@ lib/
 
 ## Screenshots 📸
 Here’s a preview of WeatherWise:
-![WeatherWise App Screenshot](https://github.com/user-attachments/assets/1f9a7b7c-5aaf-4552-9ea7-be6267db873c)
+![WeatherWise App Screenshot](https://github.com/user-attachments/assets/1875a6ba-dae1-4e91-9433-7939feb41d56)
 
 
 ## Contributing 🤝
