@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Text(
-            prediction == 1 ? 'You can go out' : 'Stay at home',
+            prediction == 1 ? '✅ You can go out.' : '⚠ Stay at home.',
             style: TextStyle(
               color: Colors.white,
               fontSize: 19,

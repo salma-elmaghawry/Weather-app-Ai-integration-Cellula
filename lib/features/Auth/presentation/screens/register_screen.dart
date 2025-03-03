@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/core/helper/constant.dart';
@@ -8,6 +9,8 @@ import 'package:weather_app/core/widgets/custom_background.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
 import 'package:weather_app/core/widgets/custom_textformfield.dart';
 import 'package:weather_app/core/widgets/line_with_action.dart';
+import 'package:weather_app/features/Auth/data/auth_repo.dart';
+import 'package:weather_app/features/Auth/presentation/cubits/auth/auth_cubit.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({super.key});
@@ -31,7 +34,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-     
       return Future.error('Location services are disabled.');
     }
 
@@ -39,7 +41,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-       
         return Future.error('Location permissions are denied');
       }
     }
@@ -122,24 +123,44 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomEvaluatedButton(
-                  title: "Register",
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {
-                      try {
+                BlocProvider(
+                  create: (context) => AuthCubit(AuthRepo()),
+                  child: BlocConsumer<AuthCubit, AuthState>(
+                    listener: (context, state) async{
+                     if(state is AuthSuccess)
+                     {
                         Position position = await _getCurrentLocation();
-                        final searchValue =
-                            '${position.latitude},${position.longitude}';
-                        context.pushNamedAndRemoveUntil(
-                          Routes.homeScreen,
-                          arguments: {'searchValue': searchValue},
-                          routePredicate: (route) => false,
+                              final searchValue =
+                                  '${position.latitude},${position.longitude}';
+                              context.pushNamedAndRemoveUntil(
+                                Routes.homeScreen,
+                                arguments: {'searchValue': searchValue},
+                                routePredicate: (route) => false,
+                              );
+
+                     }
+                     else if(state is AuthError)
+                     {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(state.message)),
                         );
-                      } catch (e) {
-                        print(e);
+                     }
+                    },
+                    builder: (context, state) {
+                       if (state is AuthLoading) {
+                        return Center(child: CircularProgressIndicator());
                       }
-                    }
-                  },
+                      return CustomEvaluatedButton(
+                        title: "Register",
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            context.read<AuthCubit>().register(
+                                email.text.trim(), password.text.trim());
+                          }
+                        },
+                      );
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 20,

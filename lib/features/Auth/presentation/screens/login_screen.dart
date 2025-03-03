@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/core/helper/constant.dart';
@@ -8,6 +9,8 @@ import 'package:weather_app/core/widgets/custom_background.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
 import 'package:weather_app/core/widgets/custom_textformfield.dart';
 import 'package:weather_app/core/widgets/line_with_action.dart';
+import 'package:weather_app/features/Auth/data/auth_repo.dart';
+import 'package:weather_app/features/Auth/presentation/cubits/auth/auth_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -108,11 +111,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomEvaluatedButton(
-                  title: "Login",
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {
-                      try {
+                BlocProvider(
+                  create: (context) => AuthCubit(AuthRepo()),
+                  child: BlocConsumer<AuthCubit, AuthState>(
+                    listener: (context, state) async {
+                      if (state is AuthSuccess) {
                         Position position = await _getCurrentLocation();
                         final searchValue =
                             '${position.latitude},${position.longitude}';
@@ -121,11 +124,28 @@ class _LoginScreenState extends State<LoginScreen> {
                           arguments: {'searchValue': searchValue},
                           routePredicate: (route) => false,
                         );
-                      } catch (e) {
-                        print(e);
+                      } else if (state is AuthError) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(state.message)),
+                        );
                       }
-                    }
-                  },
+                    },
+                    builder: (context, state) {
+                      if (state is AuthLoading) {
+                        return Center(child: CircularProgressIndicator());
+                      }
+                      return CustomEvaluatedButton(
+                        title: "Login",
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            context
+                                .read<AuthCubit>()
+                                .login(email.text.trim(), password.text.trim());
+                          }
+                        },
+                      );
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
