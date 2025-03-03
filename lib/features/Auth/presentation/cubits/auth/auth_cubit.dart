@@ -28,6 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthError("An unknown error occurred. Please try again."));
     }
   }
+  
 
   Future<void> login(String email, String password) async {
     emit(AuthLoading());

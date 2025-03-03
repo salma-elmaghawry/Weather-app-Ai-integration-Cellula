@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fontsize: 18,
               horizontalval: 10,
               // verticalval: 30,
-              title: "Go out or not ?",
+              title: "Go out ?",
               onTap: () {
                 showPredictionDialog(context, prediction);
               },

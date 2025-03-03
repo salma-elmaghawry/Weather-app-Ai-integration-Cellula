@@ -51,9 +51,10 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/icons/moon.svg"
+  image_path: "assets/icons/weather_icon.png"
   adaptive_icon_background: "#FFFFFF" # Optional: Background color for adaptive icons (Android)
-  adaptive_icon_foreground: "assets/images/moon.png"
+  adaptive_icon_foreground: "assets/icons/weather_icon.png" # Optional: Foreground for adaptive icons (Android)# Optional: Background color for adaptive icons (Android)
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
