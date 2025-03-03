@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  awesome_dialog: ^3.2.1
   bloc: ^9.0.0
   cupertino_icons: ^1.0.8
   firebase_auth: ^5.5.1
@@ -35,17 +36,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
-  
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
   geolocator: ^13.0.2
   intl: ^0.20.2
   win32: ^5.1.0
-
-
-
-
-
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.3
@@ -58,7 +53,7 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/icons/moon.svg"
   adaptive_icon_background: "#FFFFFF" # Optional: Background color for adaptive icons (Android)
-  adaptive_icon_foreground: "assets/images/moon.png" 
+  adaptive_icon_foreground: "assets/images/moon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

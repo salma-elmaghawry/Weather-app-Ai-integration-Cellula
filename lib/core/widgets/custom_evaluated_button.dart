@@ -2,16 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/core/theming/app_colors.dart';
 
 class CustomEvaluatedButton extends StatelessWidget {
-  void Function()? onTap;
-  String title;
-  CustomEvaluatedButton({super.key, required this.onTap, required this.title});
+  final void Function()? onTap;
+  final String title;
+  final double? width;
+  final double? height;
+  final double? fontsize;
+  final double? horizontalval;
+  final double? verticalval;
+
+  CustomEvaluatedButton({
+    super.key,
+    required this.onTap,
+    required this.title,
+    this.width,
+    this.fontsize,
+    this.height,
+    this.horizontalval,
+    this.verticalval,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+        width: width ?? 200, // Default width
+        height: height ?? 60, // Default height
+        padding: EdgeInsets.symmetric(
+            horizontal: horizontalval ?? 50, vertical: verticalval ?? 15),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -33,9 +51,9 @@ class CustomEvaluatedButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: fontsize ?? 18,
             ),
           ),
         ),

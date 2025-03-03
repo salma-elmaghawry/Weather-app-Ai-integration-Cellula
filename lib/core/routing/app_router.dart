@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/routing/routes.dart';
 import 'package:weather_app/features/Auth/presentation/screens/login_screen.dart';
-import 'package:weather_app/features/Auth/presentation/screens/onboarding_screen.dart';
 import 'package:weather_app/features/Auth/presentation/screens/register_screen.dart';
 import 'package:weather_app/features/home/presentation/screens/home_screen.dart';
+import 'package:weather_app/features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
