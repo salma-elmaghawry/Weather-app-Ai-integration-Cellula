@@ -16,11 +16,14 @@ class WeatherApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Weather App',
         theme: ThemeData(
-          //primaryColor: Colors.blueGrey,
-          scaffoldBackgroundColor: const Color.fromARGB(255, 116, 120, 151),
           textTheme: const TextTheme(
-          
+            bodyLarge: TextStyle(fontFamily: 'Nunito'),
+            bodyMedium: TextStyle(fontFamily: 'Nunito'),
+            titleLarge: TextStyle(fontFamily: 'Nunito'),
+            titleMedium: TextStyle(fontFamily: 'Nunito'),
+            bodySmall: TextStyle(fontFamily: 'Nunito'),
           ),
+          scaffoldBackgroundColor: const Color.fromARGB(255, 116, 120, 151),
         ),
         onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.onboardingScreen,
@@ -30,4 +33,4 @@ class WeatherApp extends StatelessWidget {
   }
 }
 
-class Mycolors {}
+class MyColors {}

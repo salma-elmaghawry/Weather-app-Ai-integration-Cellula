@@ -97,10 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 7),
             CustomEvaluatedButton(
-              width: 170,
-              fontsize: 18,
+              width: 130,
+              fontsize: 20,
               horizontalval: 10,
-              // verticalval: 30,
               title: "Go out ?",
               onTap: () {
                 showPredictionDialog(context, prediction);

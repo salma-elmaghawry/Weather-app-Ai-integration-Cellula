@@ -73,6 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: const Text(
                       "Skip",
                       style: TextStyle(
+                          fontFamily: 'Nunito',
                           color: Color.fromARGB(255, 199, 198, 198),
                           fontSize: 18),
                     ),
