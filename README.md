@@ -28,11 +28,21 @@ lib/
 ├── presentation/       # UI layer (widgets, screens, Cubit state management)
 └── main.dart           # App entry point
 ```
+## 🎥 Demo Video
 
+Check out the video below:
 
-## Screenshots 📸
-Here’s a preview of WeatherWise:
-![WeatherWise App Screenshot](https://github.com/user-attachments/assets/1875a6ba-dae1-4e91-9433-7939feb41d56)
+[![Watch the video](https://img.youtube.com/vi/XEX57LWShdg/0.jpg)](https://youtube.com/shorts/XEX57LWShdg?si=sNjU-UJjJHtFfbDq)
+
+## Screenshots 📸  
+Here’s a preview of WeatherWise:  
+
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/4832c0a0-d8e9-4d34-ad60-6a0a7faf7313" width="30%" />
+  <img src="https://github.com/user-attachments/assets/0044bcfb-7dd8-4abf-abd0-60b079d0a25b" width="30%" />
+  <img src="https://github.com/user-attachments/assets/00bcc771-5940-4434-b44b-1654bfc85da0" width="30%" />
+</p>
+
 
 
 ## Contributing 🤝
