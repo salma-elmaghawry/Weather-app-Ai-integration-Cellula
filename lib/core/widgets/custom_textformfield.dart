@@ -27,18 +27,17 @@ class CustomTextformfield extends StatelessWidget {
       style: const TextStyle(color: Colors.white),
       //decoration
       decoration: InputDecoration(
-        
           filled: true,
-          fillColor: MyColors.c2,
+          fillColor: MyColors.c2.withOpacity(0.5),
           labelText: label,
           labelStyle: const TextStyle(color: Colors.white),
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(
               color: MyColors.primaryColor,
               width: 2.0,

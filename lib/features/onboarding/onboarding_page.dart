@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/core/theming/app_colors.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String title;
@@ -16,59 +17,30 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Curved Image
-
-        const SizedBox(height: 10),
-
-        // Title
-        Text(title),
-
-        const SizedBox(height: 10),
-
-        // Description
+        SizedBox(
+          height: 30,
+        ),
+        SvgPicture.asset(imageUrl, height: 250),
+        const SizedBox(height: 30),
+        Text(
+          title,
+          style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: MyColors.primaryColor),
+        ),
+        const SizedBox(height: 15),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40.0),
           child: Text(
             description,
-            style: const TextStyle(fontSize: 14, color: Colors.grey),
+            style: const TextStyle(fontSize: 15, color: Colors.white),
             textAlign: TextAlign.center,
           ),
         ),
       ],
     );
   }
-}
-
-// Custom Clipper for Curved Image
-class CustomCurveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height * 0.8); // Start at 80% height on the left
-
-    // Adjust the control points for a more balanced curve
-    path.quadraticBezierTo(
-        size.width / 2, size.height * 1.0, size.width, size.height * 0.8);
-
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-}
-
-// Model for Onboarding Data
-class OnboardingData {
-  final String image;
-  final String title;
-  final String description;
-
-  OnboardingData({
-    required this.image,
-    required this.title,
-    required this.description,
-  });
 }
