@@ -3,6 +3,9 @@
 
 WeatherWise is a smart weather prediction app powered by AI integration, helping users decide whether to go out or stay at home based on real-time weather conditions, WeatherWise ensures a seamless user experience.
 
+
+## 📚 System Design
+
 ## Features ✨
 
 - 🌞🌧️**AI-Powered Predictions**:Smart recommendations on whether to go out or stay home based on weather data. 
@@ -52,4 +55,5 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## Contact 📬
 For questions or collaboration, reach out via [salmaelmaghawry91@gmail.com].
+
 

@@ -5,7 +5,7 @@ class PredictionService {
   PredictionService();
 
   Future<int> getPrediction(List<int> features) async {
-    final url = Uri.parse('https://bb28-102-189-251-5.ngrok-free.app/predict');
+    final url = Uri.parse('https://4865-102-189-251-5.ngrok-free.app/predict');
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},
