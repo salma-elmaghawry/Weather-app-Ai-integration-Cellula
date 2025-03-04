@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/helper/extenstions.dart';
 import 'package:weather_app/core/routing/routes.dart';
-import 'package:weather_app/core/theming/app_colors.dart';
 import 'package:weather_app/core/widgets/custom_evaluated_button.dart';
+import 'package:weather_app/core/widgets/custom_indicator.dart';
 import 'package:weather_app/features/onboarding/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -101,25 +101,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             SizedBox(height: 30),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomIndicator extends StatelessWidget {
-  final bool isActive;
-
-  const CustomIndicator({Key? key, required this.isActive}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      height: 10,
-      width: isActive ? 30 : 10,
-      decoration: BoxDecoration(
-        color: isActive ? MyColors.primaryColor : Colors.white,
-        borderRadius: BorderRadius.circular(5),
       ),
     );
   }

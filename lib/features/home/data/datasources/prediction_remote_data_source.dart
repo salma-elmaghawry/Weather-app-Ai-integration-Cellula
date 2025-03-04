@@ -1,9 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class PredictionService {
-  PredictionService();
-
+class PredictionRemoteDataSource {
   Future<int> getPrediction(List<int> features) async {
     final url = Uri.parse('https://4865-102-189-251-5.ngrok-free.app/predict');
     final response = await http.post(
