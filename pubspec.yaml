@@ -28,14 +28,21 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+# A package for creating beautiful and customizable dialogs.
   awesome_dialog: ^3.2.1
+  # A predictable state management library for Dart.
   bloc: ^9.0.0
+  # A package that provides iOS-style icons.
   cupertino_icons: ^1.0.8
+  # A Flutter plugin for Firebase Authentication.
   firebase_auth: ^5.5.1
+  # A Flutter plugin to use the Firebase Core API, which is required for initializing Firebase.
   firebase_core: ^3.12.1
   flutter:
     sdk: flutter
+  # A Flutter package that integrates the BLoC pattern.
   flutter_bloc: ^9.0.0
+  # A package for responsive design that adapts to different screen sizes.
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
   geolocator: ^13.0.2
