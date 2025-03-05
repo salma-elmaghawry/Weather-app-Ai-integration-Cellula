@@ -28,7 +28,6 @@ class OnboardingPage extends StatelessWidget {
           title,
           style: const TextStyle(
               fontSize: 24,
-              fontFamily: 'Nunito',
               fontWeight: FontWeight.w900,
               color: MyColors.primaryColor),
         ),
@@ -40,7 +39,6 @@ class OnboardingPage extends StatelessWidget {
             style: const TextStyle(
               fontSize: 15,
               color: Colors.white,
-              fontFamily: 'Nunito',
             ),
             textAlign: TextAlign.center,
           ),
